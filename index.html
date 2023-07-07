@@ -21,6 +21,52 @@
     <div class="bg-amber-50 h-screen w-full flex justify-center	pt-16">
         <div class="container bg-white border rounded-xl my-10 p-8">
             <h2 class="text-xl font-normal">小遊戲提醒器</h2>
+            <span class="text-sm">於 25、29 分各提醒一次</span>
+
+            <ul role="list" class="divide-y divide-gray-100">
+                <li class="mt-5"></li>
+                <li class="flex gap-x-6">
+                    <input type="checkbox" id="ox">
+                    <label for="ox" class="w-full py-5">
+                        <div class="flex flex-col">
+                            OX 問答
+                            <span class="pl-3 text-sm border-l-4 border-slate-200 text-slate-400">每 0, 3, 6, 9 點</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="flex gap-x-6">
+                    <input type="checkbox" id="rockPaperScissors">
+                    <label for="rockPaperScissors" class="w-full py-5">
+                        <div class="flex flex-col">
+                            剪刀石頭布
+                            <span class="pl-3 text-sm border-l-4 border-slate-200 text-slate-400">每 1, 4, 7, 10 點</span>
+                            <a href="http://agrodesu.com/maple/RPS/" target="_blank"
+                                class="pl-3 text-sm border-l-4 border-slate-200 text-blue-400 w-auto">Savior剪刀石頭布 懶人猜拳網址</a>
+                        </div>
+                    </label>
+                </li>
+                <li class="flex gap-x-6">
+                    <input type="checkbox" id="bingo">
+                    <label for="bingo" class="w-full py-5">
+                        <div class="flex flex-col">
+                            賓果
+                            <span class="pl-3 text-sm border-l-4 border-slate-200 text-slate-400">每 2, 5, 8, 11 點</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="mb-5"></li>
+            </ul>
+            <div class="flex items-center">
+                <button onclick="start()"
+                    class="mx-2 bg-transparent hover:bg-green-400 text-green-400 font-semibold hover:text-white py-2 px-4 border border-green-400 hover:border-transparent rounded">
+                    啟用
+                </button>
+
+                <button onclick="reset()"
+                    class="mx-2 bg-transparent hover:bg-red-400 text-red-400 font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded">
+                    重置
+                </button>
+            </div>
         </div>
     </div>
 
