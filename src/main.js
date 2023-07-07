@@ -17,6 +17,7 @@ function notify() {
     }
 
     interval = setInterval(function () {
+        setGameName()
         min = new Date().getMinutes()
         check = [ox, bingo, rockPaperScissors].filter(el => el.checked == true)
         if (check.length === 0) return
@@ -51,9 +52,28 @@ function reset() {
     console.log('Interval clear success!')
 }
 
+function getGameName(key) {
+    return {
+        'ox': 'OX 問答',
+        'rockPaperScissors': '剪刀石頭布',
+        'bingo': '賓果監獄'
+    }[key]
+}
+
+function setGameName() {
+    let [hour, min] = [new Date().getHours(), new Date().getMinutes()]
+    if(min > 30) hour += 1
+
+    let item = Object.keys(setting).find(key => setting[key].includes(hour % 12))
+    gameName.innerText = getGameName(item)
+}
+
 var interval;
 var setting = {
     'ox': [0, 3, 6, 9],
     'rockPaperScissors': [1, 4, 7, 10],
     'bingo': [2, 5, 8, 11]
 }
+
+setGameName()
+setInterval(setGameName, 60 * 1000)
